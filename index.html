@@ -5,9 +5,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+<header class="d-flex justify-content-center">
+    <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+</header>
 
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <form action="" autocomplete="off">
+                    <div class="col">
+                        <label class="form-label" for="name">Nome e cognome</label>
+                        <input class="form-control" type="text" id="name" />
+                    </div>
+                    <div class="col">
+                        <label class="form-label" for="km">KM da percorrere</label>
+                        <input class="form-control" type="number" id="km" />
+                    </div>
+                    <div class="col">
+                        <label class="form-label" for="eta">Età</label>
+                        <input class="form-control" type="number" id="eta" />
+                    </div>
+                    <div class="col-12 pt-3">
+                        <button class="btn btn-primary" type="submit">Genera</button>
+                        <button type="reset" class="btn btn-warning">Annulla</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 text-center mt-3">
+                <h2>IL TUO BIGLIETTO</h2>
+            </div>
+            <div class="card col-3 mt-3">
+                <div class="card-header">
+                    <h2>NOMINATIVO PASSEGGERO</h2>
+                </div>
+                <div class="card-body">
+                    <h3 id="nominativo"></h3>
+                </div>
+            </div>
+            <div class="card col-3 mt-3">
+                <div class="card-header">
+                    <h2>KM PERCORSI</h2>
+                </div>
+                <div class="card-body">
+                    <h3 id="percorso"></h3>
+                </div>
+            </div>
+            <div class="card col-3 mt-3">
+                <div class="card-header">
+                    <h2>ETà PASSEGGERO</h2>
+                </div>
+                <div class="card-body">
+                    <h3 id="eta-passeggero"></h3>
+                </div>
+            </div>
+            <div class="card col-3 mt-3">
+                <div class="card-header">
+                    <h2>COSTO BIGLIETTO</h2>
+                </div>
+                <div class="card-body">
+                    <h3 id="prezzo"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="./script.js"></script>
 </body>
 

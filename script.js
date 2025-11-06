@@ -15,46 +15,74 @@
 // stampare prezzo finale con massimo 2 decimale
 
 
-let etaPrompt = prompt("Età");
-let eta = parseInt(etaPrompt);
+// let etaPrompt = prompt("Età");
+// let eta = parseInt(etaPrompt);
 
-let kmPrompt = prompt("Quanti Km devi percorrere?");
-let km = parseInt(kmPrompt);
+// let kmPrompt = prompt("Quanti Km devi percorrere?");
+// let km = parseInt(kmPrompt);
 
-let prezzoPieno = km * 0.21;
+const form = document.querySelector("form");
 
-let prezzoFinale;
+//campi da compilare
+const nameInput = document.getElementById("name");
+const kmInput = document.getElementById("km");
+const etaInput = document.getElementById("eta");
 
-// CONTROLLO DATI
-if (isNaN(eta) === true || isNaN(km) === true) {
-    alert("inserisci un valore corretto");
+//output
+const nominativoOutput = document.getElementById("nominativo");
+const prezzoOutput = document.getElementById("prezzo");
+const kmOutput = document.getElementById("percorso");
+const etaOutput = document.getElementById("eta-passeggero");
 
-} else if (eta <= 0 || km <= 0) {
-    alert("inserisci un valore corretto");
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-} else if (eta < 18) {
-    let sconto = 20;
-    let prezzoDaScontare = (prezzoPieno * sconto) / 100;
-    prezzoFinale = prezzoPieno - prezzoDaScontare;
+    const name = nameInput.value;
+    const km = kmInput.value;
+    const eta = etaInput.value;
 
-    // prezzoPieno = (km * 0.21) - ((km * 0.21 * 20) / 100);
-} else if (eta > 65) {
-    let sconto = 40;
-    let prezzoDaScontare = (prezzoPieno * sconto) / 100;
-    prezzoFinale = prezzoPieno - prezzoDaScontare;
+    let prezzoPieno = km * 0.21;
+    let prezzoFinale;
 
-    // prezzoPieno = (km * 0.21) - ((km * 0.21 * 40) / 100);
-} else {
-    prezzoFinale = prezzoPieno;
-}
+    // CONTROLLO DATI
+    if (isNaN(eta) === true || isNaN(km) === true) {
+        alert("inserisci un valore corretto");
+
+    } else if (eta <= 0 || km <= 0) {
+        alert("inserisci un valore corretto");
+
+    } else if (eta < 18) {
+        let sconto = 20;
+        let prezzoDaScontare = (prezzoPieno * sconto) / 100;
+        prezzoFinale = prezzoPieno - prezzoDaScontare;
+
+
+    } else if (eta > 65) {
+        let sconto = 40;
+        let prezzoDaScontare = (prezzoPieno * sconto) / 100;
+        prezzoFinale = prezzoPieno - prezzoDaScontare;
+
+
+    } else {
+        prezzoFinale = prezzoPieno;
+    }
+
+    const prezzoArrotondato = prezzoFinale.toFixed(2);
+
+
+
+
+    nominativoOutput.innerHTML = name;
+    kmOutput.innerHTML = km;
+    etaOutput.innerHTML = eta;
+    prezzoOutput.innerHTML = `${prezzoArrotondato}€`;
+
+});
 
 
 
 
 
 
-const prezzoArrotondato = prezzoFinale.toFixed(2);
 
-let message = `Il prezzo del tuo biglietto è di ${prezzoArrotondato}€`;
-console.log(message);
 
