@@ -27,12 +27,17 @@ const form = document.querySelector("form");
 const nameInput = document.getElementById("name");
 const kmInput = document.getElementById("km");
 const etaInput = document.getElementById("eta");
+const carrozza = Math.floor(Math.random() * 15) + 1;
+const codice = Math.floor(Math.random() * 99999) + 1;
+
 
 //output
 const nominativoOutput = document.getElementById("nominativo");
 const prezzoOutput = document.getElementById("prezzo");
 const kmOutput = document.getElementById("percorso");
 const etaOutput = document.getElementById("eta-passeggero");
+const carrozzaOutput = document.getElementById("carrozza");
+const codiceOutput = document.getElementById("codice");
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -76,7 +81,8 @@ form.addEventListener("submit", function (event) {
     kmOutput.innerHTML = km;
     etaOutput.innerHTML = eta;
     prezzoOutput.innerHTML = `${prezzoArrotondato}€`;
-
+    carrozzaOutput.innerHTML = carrozza;
+    codiceOutput.innerHTML = codice;
 });
 
 
